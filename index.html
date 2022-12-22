@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activitat 3</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script defer src="js/Activitat1.js"></script>
+</head>
+<body>
+    <!-- Login section -->
+    <section id="login" class="no_select">
+        <div class="container login">
+            <!-- Imagen y texto -->
+            <img src="images/image.png" alt="">
+            <h1>Iniciar session</h1>
+            <!-- Formulario de inicio de sesion -->
+            <form action="index.html">
+                <!-- Inputs y spans con el boton de logearse -->
+                <input type="text" name="user" id="cUser" placeholder="Username">
+                <span id="mUser">* Introduce el nombre de usuario</span>
+                <input type="password" name="pass" id="cPass" placeholder="Password">
+                <span id="mPass">* Introduce la contraseña </span>
+                <span id="mLogin">* Datos de inicio de sesion incorrectos</span>
+                <div class="line">
+                    <p> Versio per movils </p>
+                    <label class="switch">
+                        <input type="checkbox" onclick="change()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <button type="button" onclick="login()"> Log In </button>
+                <p>No no tienes cuanta aun?<a onclick="toSign()"> Registrate!</a></p>
+            </form>
+        </div>
+    </section>
+    <!-- Signup section -->
+    <section id="signup" class="no_select">
+        <div class="container signup">
+            <!-- Imagen y texto -->
+            <img src="images/image.png" alt="">
+            <h1>Registrate</h1>
+            <!-- Formulario de registro -->
+            <form action="index.html">
+                <!-- Inputs y spans con el boton de registrarse -->
+                <input type="text" name="user" id="cUser2" placeholder="Username">
+                <span id="mUser2">* Introduce el nombre de usuario</span>
+                <input type="password" name="pass" id="cPass2" placeholder="Password">
+                <span id="mPass2">* Introduce la primera contraseña</span>
+                <input type="password" name="pass" id="cPass3" placeholder="Confirm Password">
+                <span id="mPass3">* Introduce la segunda contraseña</span>
+                <span id="mPassDont">* Las dos contraseñas no coinciden</span>
+                <button type="button" onclick="signup()"> Sign In </button>
+                <p>Ya tienes cuanta?<a onclick="toLogin()"> Inicia session!</a></p>
+            </form>
+        </div>
+    </section> 
+    <!-- Section de vagones -->
+    <section id="train">
+        <div class="container trains">
+            <div class="movement_area">
+                <div id="train_move">
+                    <div id="Loco" class="vagon" name="vagon1" onclick="selectVagon(0)">
+                        <div class="red-line"></div>    
+                        <div class="ventanal-vagon">
+                            <div class="ventana"></div>
+                            <div class="ventana"></div>
+                            <br>
+                        </div>
+                    </div>
+                    <div id="Vip" class="vagon" onclick="selectVagon(1)">
+                        <div class="red-line"></div>    
+                        <div class="ventanal-vagon">
+                            <div class="ventana"></div>
+                            <div class="ventana"></div>
+                        </div>
+                        <div class="puertas">
+                            <div class="puerta left">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                            <div class="puerta right">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                        </div>
+                        <div class="cartelera">
+                            <div class="cartel">
+                                <div class="cartel-text">
+                                    <h1 class="move_cartel">L1 - VIP</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Vip" class="vagon" onclick="selectVagon(2)">
+                        <div class="red-line"></div>    
+                        <div class="ventanal-vagon">
+                            <div class="ventana"></div>
+                            <div class="ventana"></div>
+                        </div>
+                        <div class="puertas">
+                            <div class="puerta left">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                            <div class="puerta right">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                        </div>
+                        <div class="cartelera">
+                            <div class="cartel">
+                                <div class="cartel-text">
+                                    <h1 class="move_cartel">L1 - VIP</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Norm" class="vagon" onclick="selectVagon(3)">
+                        <div class="red-line"></div>    
+                        <div class="ventanal-vagon">
+                            <div class="ventana"></div>
+                            <div class="ventana"></div>
+                        </div>
+                        <div class="puertas">
+                            <div class="puerta left">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                            <div class="puerta right">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                        </div>
+                        <div class="cartelera">
+                            <div class="cartel">
+                                <div class="cartel-text">
+                                    <h1 class="move_cartel">L1 - NORMY</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Norm" class="vagon" onclick="selectVagon(4)">
+                        <div class="red-line"></div>    
+                        <div class="ventanal-vagon">
+                            <div class="ventana"></div>
+                            <div class="ventana"></div>
+                        </div>
+                        <div class="puertas">
+                            <div class="puerta left">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                            <div class="puerta right">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                        </div>
+                        <div class="cartelera">
+                            <div class="cartel">
+                                <div class="cartel-text">
+                                    <h1 class="move_cartel">L1 - NORMY</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Norm" class="vagon" onclick="selectVagon(5)">
+                        <div class="red-line"></div>    
+                        <div class="ventanal-vagon">
+                            <div class="ventana"></div>
+                            <div class="ventana"></div>
+                        </div>
+                        <div class="puertas">
+                            <div class="puerta left">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                            <div class="puerta right">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                        </div>
+                        <div class="cartelera">
+                            <div class="cartel">
+                                <div class="cartel-text">
+                                    <h1 class="move_cartel">L1 - NORMY</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Norm" class="vagon" onclick="selectVagon(6)">
+                        <div class="red-line"></div>    
+                        <div class="ventanal-vagon">
+                            <div class="ventana"></div>
+                            <div class="ventana"></div>
+                        </div>
+                        <div class="puertas">
+                            <div class="puerta left">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                            <div class="puerta right">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                        </div>
+                        <div class="cartelera">
+                            <div class="cartel">
+                                <div class="cartel-text">
+                                    <h1 class="move_cartel">L1 - NORMY</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Norm" class="vagon" onclick="selectVagon(7)">
+                        <div class="red-line"></div>    
+                        <div class="ventanal-vagon">
+                            <div class="ventana"></div>
+                            <div class="ventana"></div>
+                        </div>
+                        <div class="puertas">
+                            <div class="puerta left">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                            <div class="puerta right">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                        </div>
+                        <div class="cartelera">
+                            <div class="cartel">
+                                <div class="cartel-text">
+                                    <h1 class="move_cartel">L1 - NORMY</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Norm" class="vagon" onclick="selectVagon(8)">
+                        <div class="red-line"></div>    
+                        <div class="ventanal-vagon">
+                            <div class="ventana"></div>
+                            <div class="ventana"></div>
+                        </div>
+                        <div class="puertas">
+                            <div class="puerta left">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                            <div class="puerta right">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                        </div>
+                        <div class="cartelera">
+                            <div class="cartel">
+                                <div class="cartel-text">
+                                    <h1 class="move_cartel">L1 - NORMY</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Norm" class="vagon" onclick="selectVagon(9)">
+                        <div class="red-line"></div>    
+                        <div class="ventanal-vagon">
+                            <div class="ventana"></div>
+                            <div class="ventana"></div>
+                        </div>
+                        <div class="puertas">
+                            <div class="puerta left">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                            <div class="puerta right">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                        </div>
+                        <div class="cartelera">
+                            <div class="cartel">
+                                <div class="cartel-text">
+                                    <h1 class="move_cartel">L1 - NORMY</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Norm" class="vagon" onclick="selectVagon(10)">
+                        <div class="red-line"></div>    
+                        <div class="ventanal-vagon">
+                            <div class="ventana"></div>
+                            <div class="ventana"></div>
+                        </div>
+                        <div class="puertas">
+                            <div class="puerta left">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                            <div class="puerta right">
+                                <div class="ventana-puerta"></div>
+                            </div>
+                        </div>
+                        <div class="cartelera">
+                            <div class="cartel">
+                                <div class="cartel-text">
+                                    <h1 class="move_cartel">L1 - NORMY</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="seperador_fijo">
+                <i class='bx bx-arrow-from-right' onclick="move_left()" id="flecha_izq"></i>
+                <div class="menu_train">
+                    <h1 class="left">Vagon</h1>
+                    <h1 id="posicion" class="right"></h1>
+                </div>
+                <div class="line">
+                    <button onclick="guardar()"> Guardar </button>
+                    <button onclick="salir()"> Salir </button>
+                </div>
+                <div class="menu_train">
+                    <h1 class="left">Clase</h1>
+                    <h1 id="clase_vagon" class="right"></h1>
+                </div>
+                <i class='bx bx-arrow-from-left' onclick="move_right()" id="flecha_der"></i>
+            </div>
+        </div>
+    </section>
+    <!-- Modal de vagones -->
+    <div id="modal_error_final_tren" class="modal">
+        <div id="modal_content">
+            <div class="close" onclick="cerrar_modal()"><i class='bx bx-run'></i></div>
+            <h1>Onde vah' fitirpardih'</h1>
+            <p>Has llegado al final del tren, deverás ir en la otra direccion!</p>  
+            <p>Pulsa el boton de arriba a la izquierda para salir</p>
+            <p>Este mensaje no se volvera a mostrar mas veces, recuerda no volver a pasarte de rango, tampoco es tan dificil</p>
+        </div>
+    </div>
+    <!-- Modal del tipo -->
+    <div id="modal_error_tipo" class="modal">
+        <div id="modal_content" class="tipo">
+            <div class="close" onclick="cerrar_modal()"><i class='bx bx-run'></i></div>
+            <h1 id="set_tipo"></h1>
+            <p id="set_texto"></p>
+        </div>
+    </div>
+    <!-- Section de asientos -->
+    <section id="asientos">
+        <div class="container asientos">
+            <div id="clas0" class="como_modal">
+                <h1>Clase 01</h1>
+            </div>
+            <div id="clas1" class="como_modal">
+                <h1>Clase 02</h1>
+            </div>
+            <div id="clas2" class="como_modal">
+                <h1>Clase 03</h1>
+            </div>
+            <div id="clas3" class="como_modal">
+                <h1>Clase 04</h1>
+            </div>
+            <div id="clas4" class="como_modal">
+                <h1>Clase 05</h1>
+            </div>
+            <div id="clas5" class="como_modal">
+                <h1>Clase 06</h1>
+            </div>
+            <div id="clas6" class="como_modal">
+                <h1>Clase 07</h1>
+            </div>
+            <div id="clas7" class="como_modal">
+                <h1>Clase 08</h1>
+            </div>
+            <div id="clas8" class="como_modal">
+                <h1>Clase 09</h1>
+            </div>
+            <div id="clas9" class="como_modal">
+                <h1>Clase 10</h1>
+            </div>
+            <div id="clas10" class="como_modal">
+                <h1>Clase 11</h1>
+            </div>
+            <div class="close" onclick="cerrar_modal_asientos()"><i class='bx bx-run'></i></div>
+            <div class="boton_comprar">
+                <div id="precio"></div>
+                <button onclick="comprar()">Comprar</button>
+
+            </div>
+        </div>
+    </section>
+</body>
+</html> 
